@@ -4,8 +4,6 @@ import guru.springframework.model.Owner;
 import guru.springframework.model.Vet;
 import guru.springframework.services.OwnerService;
 import guru.springframework.services.VetService;
-import guru.springframework.services.map.OwnerServiceMap;
-import guru.springframework.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -40,7 +38,7 @@ public class DataLoader implements CommandLineRunner {
     vet1.setFirstName("Claudio");
     vet1.setLastName("Fernandez");
     vetService.save(vet1);
-    System.out.println("loaded vets ...");
+    System.out.println("loaded vets ..."+ vet1.getFirstName());
 
   }
 }
