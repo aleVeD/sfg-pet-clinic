@@ -1,5 +1,4 @@
 package guru.springframework.services.springDataJpa;
-
 import guru.springframework.model.Owner;
 import guru.springframework.repositories.OwnerRepository;
 import guru.springframework.repositories.PetRepository;
