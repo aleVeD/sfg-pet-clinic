@@ -1,11 +1,9 @@
 package guru.springframework.services.springDataJpa;
-
 import guru.springframework.model.Pet;
 import guru.springframework.repositories.PetRepository;
 import guru.springframework.services.PetService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-
 import java.util.HashSet;
 import java.util.Set;
 
