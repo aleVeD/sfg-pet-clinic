@@ -1,5 +1,4 @@
 package guru.springframework.services.map;
-
 import guru.springframework.model.PetType;
 import guru.springframework.services.PetTypeService;
 import org.springframework.context.annotation.Profile;
