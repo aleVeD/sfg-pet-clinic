@@ -1,10 +1,7 @@
 package guru.springframework.bootstrap;
 
 import guru.springframework.model.*;
-import guru.springframework.services.OwnerService;
-import guru.springframework.services.PetTypeService;
-import guru.springframework.services.SpecialityService;
-import guru.springframework.services.VetService;
+import guru.springframework.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,12 +14,14 @@ public class DataLoader implements CommandLineRunner {
   private final VetService vetService;
   private final PetTypeService petTypeService;
   private final SpecialityService specialityService;
+  private final VisitService visitService;
 
-  public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
+  public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
     this.ownerService = ownerService;
     this.vetService = vetService;
     this.petTypeService = petTypeService;
     this.specialityService = specialityService;
+    this.visitService = visitService;
   }
 
 
@@ -51,6 +50,7 @@ public class DataLoader implements CommandLineRunner {
     PetType cat = new PetType();
     dog.setName("cat");
     PetType catPetSaved = petTypeService.save(cat);
+
     Owner owner1 = new Owner();
     //owner1.setId(1L);
     owner1.setFirstName("Mike");
@@ -107,5 +107,11 @@ public class DataLoader implements CommandLineRunner {
     vet2.getSpecialities().add(surgerySaved);
     vetService.save(vet2);
     System.out.println("loaded vets ..."+ vet1.getFirstName());
+
+    Visit visit = new Visit();
+    visit.setPet(mikePet);
+    visit.setDate(LocalDate.now());
+    visit.setDescription("sneezy dog");
+    visitService.save(visit);
   }
 }
