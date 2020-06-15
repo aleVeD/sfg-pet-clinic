@@ -1,8 +1,15 @@
 package guru.springframework.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 @Entity
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Table(name = "visits")
 public class Visit extends BaseEntity{
   @Column(name = "date")
@@ -19,21 +26,5 @@ public class Visit extends BaseEntity{
 
   public void setPet(Pet pet) {
     this.pet = pet;
-  }
-
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public LocalDate getDate() {
-    return date;
-  }
-
-  public void setDate(LocalDate date) {
-    this.date = date;
   }
 }
